@@ -1,0 +1,49 @@
+html{
+    background-color: white;
+    font-size: 100%;
+}
+
+body{
+    font-family: "Inter";
+    margin: 0px;
+    color: black;
+}
+
+h1, h2, h3, p{
+    margin: 0px;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none; /* Tira as bolinhas das listas */
+}
+
+img{
+    max-width: 100%; /* Deixar o tamanho da imagem original para não perder a qualidade */
+    display: block; /* Pra ficar no lugar que deixou */
+}
+
+.subtitulo{
+    font-size: 10rem;
+    line-break: 1;
+    text-transform: uppercase;
+    word-break: break-all;
+    max-width: 4ch;
+}
+
+/* RESPONSIVIDADE GERAL PARA MOBILE */
+@media (max-width: 600px) {
+  html {
+    font-size: 90%;
+  }
+  body {
+    padding: 0 4px;
+  }
+  .subtitulo, .titulo-formacao {
+    font-size: 2.5rem !important;
+    max-width: 100% !important;
+    text-align: center;
+    word-break: break-word;
+  }
+}

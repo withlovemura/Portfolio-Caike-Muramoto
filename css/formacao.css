@@ -1,0 +1,119 @@
+.formacao {
+    background: rgb(0, 0, 0);
+    color: white;
+    height: 200vh;
+}
+
+.formacao-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  display: flex;
+  justify-content: flex-start; /* TROCA AQUI */
+  align-items: flex-start;
+  gap: 300px;
+}
+
+.formacao-titulo {
+  text-align: right;
+}
+
+.label-projeto {
+  padding: 20px 0 40px 0;  /* remove padding lateral */
+  margin: 0;               /* remove margin que empurra pro lado */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* garante alinhamento à esquerda */
+}
+
+.titulo-formacao {
+  font-size: 10rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #E82B2B;
+  text-shadow: 2px 3px 0 #fff !important;
+  text-shadow: 8px 8px 0 #fff;  text-shadow: 6px 6px 0 #fff !important;
+padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.formacao-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.formacao-texto {
+    font-size: 1.5rem; 
+    line-height: 1.33; 
+    max-width:47ch;
+    margin-bottom: 60px; 
+    color: #ffff;
+}
+
+.formacao-texto strong {
+    color: #E82B2B;
+}
+.estudo-lista {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;    
+    margin-bottom: 60px;
+    box-shadow: 8px 8px 0px #ffffff;
+    border-radius: 5px;
+}
+ 
+.estudo {
+    flex: 1;
+    background: #E82B2B;
+    padding: 20px;
+    border-radius: 5px;        
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .formacao {
+    height: auto;
+    padding: 20px 0;
+  }
+  .formacao-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 4px;
+    align-items: center;
+  }
+  .formacao-titulo {
+    order: -1;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .titulo-formacao {
+    font-size: 3.2rem !important;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+  }
+  .formacao-conteudo {
+    gap: 20px;
+  }
+  .estudo-lista {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .estudo {
+    padding: 10px;
+  }
+}
+@media (max-width: 800px) {
+  .titulo-formacao {
+    text-shadow: 1.5px 2px 0 #fff !important;
+  }
+}

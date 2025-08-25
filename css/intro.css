@@ -1,0 +1,200 @@
+.perfil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap; /* pra responsivo funcionar */
+}
+
+.textos-do-perfil {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+  margin-left: 250px;
+  margin-bottom: 125px;
+  margin-top: 20px;
+}
+
+.textos-do-perfil h1 {
+  font-size: 6rem;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.textos-do-perfil .destaque {
+ line-height: 5rem;
+ background: red;
+}
+
+.textos-do-perfil .nome {
+  font-size: 12rem;
+  font-weight: 900;
+  line-height: 1; /* evita espaçamentos esquisitos */
+}
+
+.destaque, .nome {
+  white-space: nowrap;
+}
+
+.descricao {
+  font-size: 1rem;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.foto-de-perfil {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin-right: 150px;
+  margin-top: -30px;
+}
+
+.foto-de-perfil img {
+  max-width: 110%;
+  padding: 10px 20px 20px 0px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) { /* deixar o site responsivo*/
+    .textos-do-perfil {
+        flex-direction: column-reverse; /* Quebrar em colunas*/
+        gap: 40px; /*espaçamento palavras */
+        padding: 5px 5px 5px 5px;
+    }
+    .header a {
+        background: #f5f5f5;
+        border-radius: 4px;
+    }
+
+    .descricao{
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 2000px) {
+      .foto-de-perfil{
+      padding: 0 0 0 0px;
+      max-width: 700px;
+      min-width: 400px;
+    }
+
+    .textos-do-perfil {
+        flex-direction: column-reverse; /* Quebrar em colunas*/
+        gap: 40px; /*espaçamento palavras */
+        padding: 0px 5px 5px 5px;
+    }
+  }
+
+  @media (max-width: 600px) {
+  .perfil {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 4px;
+    align-items: center;
+  }
+  .textos-do-perfil {
+    margin-left: 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .textos-do-perfil .destaque {
+ line-height: 3rem;
+ background: red;
+}
+  .textos-do-perfil h1 {
+    font-size: 3rem;
+    gap: 4px;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .textos-do-perfil .nome {
+    font-size: 2.8rem;
+  }
+  .foto-de-perfil {
+    width: 94vw;
+    max-width: 94vw;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: none;
+    margin-bottom: 0 !important;
+  }
+  .foto-de-perfil img {
+    width: 94vw;
+    max-width: 94vw;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+  }
+  .descricao {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .perfil {
+    gap: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .foto-de-perfil {
+    margin-bottom: 0 !important;
+  }
+  .experiencia {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .textos-do-perfil h1 {
+    font-size: 2.2rem;
+    gap: 4px;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .textos-do-perfil .nome {
+    font-size: 4.8rem !important;
+    display: block;
+    margin-top: 0;
+    line-height: 1.1;
+    white-space: normal !important;
+    flex-basis: 100%;
+  }
+  .descricao {
+    font-size: 0.92rem !important;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  .perfil {
+    margin-top: 32px !important;
+  }
+  .textos-do-perfil h1 {
+    margin-top: 18px !important;
+  }
+  .foto-de-perfil {
+    margin-bottom: -10px !important;
+  }
+}
