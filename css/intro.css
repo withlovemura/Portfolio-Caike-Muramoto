@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 2rem;
   flex-wrap: wrap; /* pra responsivo funcionar */
 }
 
@@ -10,13 +10,13 @@
   flex: 1;
   max-width: 600px;
   text-align: left;
-  margin-left: 250px;
+  margin-left: 200px;
   margin-bottom: 125px;
   margin-top: 20px;
 }
 
 .textos-do-perfil h1 {
-  font-size: 6rem;
+  font-size: 5rem;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
@@ -27,11 +27,11 @@
 
 .textos-do-perfil .destaque {
  line-height: 5rem;
- background: red;
+ background: rgb(255, 15, 15);
 }
 
 .textos-do-perfil .nome {
-  font-size: 12rem;
+  font-size: 10rem;
   font-weight: 900;
   line-height: 1; /* evita espaçamentos esquisitos */
 }

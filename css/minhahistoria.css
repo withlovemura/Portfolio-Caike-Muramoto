@@ -1,0 +1,119 @@
+.minhahistoria {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  min-height: 800px;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitulo-minhahistoria {
+  font-size: 9rem;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  text-shadow: 5px 5px 0px #ff3939;
+}
+
+.minha-historia .carousel-container,
+.minhahistoria .carousel-container {
+  max-width: 1000px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.minha-historia .carousel-item,
+.minhahistoria .carousel-item {
+  padding: 15px;
+}
+
+.minha-historia .carousel-item img,
+.minhahistoria .carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* reduzir altura fixa para conteúdo ajustar ao carrossel */
+.minha-historia,
+.minhahistoria {
+  min-height: auto;
+}
+
+/* responsivo: menos espaço em telas menores */
+/* Estilos para os controles do carrossel */
+.minhahistoria .carousel-control-prev,
+.minhahistoria .carousel-control-next {
+  width: 5%;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.minhahistoria .carousel-control-prev:hover,
+.minhahistoria .carousel-control-next:hover {
+  opacity: 1;
+}
+
+.minhahistoria .carousel-indicators {
+  bottom: -40px;
+}
+
+.minhahistoria .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 6px;
+  background-color: #333;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.minhahistoria .carousel-indicators button.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Animação suave para transição de slides */
+.minhahistoria .carousel-inner {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.minhahistoria .carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+
+
+@media (max-width: 900px) {
+  .minhahistoria {
+    padding: 30px 0;
+  }
+
+  .subtitulo-minhahistoria {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+
+  .minhahistoria .carousel-container {
+    max-width: 95%;
+    width: 95%;
+  }
+
+  .minhahistoria .carousel-item img {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .minhahistoria .carousel-item img {
+    height: 40vh;
+  }
+}
