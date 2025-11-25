@@ -1,16 +1,19 @@
 .formacao {
     background: rgb(0, 0, 0);
     color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .formacao-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 120px 20px;
+  padding: 80px 20px;
   display: flex;
-  justify-content: flex-start; /* TROCA AQUI */
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 300px;
+  gap: 200px;
 }
 
 .formacao-titulo {
@@ -26,12 +29,11 @@
 }
 
 .titulo-formacao {
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: bold;
   line-height: 1;
   color: #E82B2B;
-  text-shadow: 2px 3px 0 #fff !important;
-  text-shadow: 8px 8px 0 #fff;  text-shadow: 6px 6px 0 #fff !important;
+  text-shadow: 6px 6px 0 #fff !important;
   padding: 0;
   margin: 0;
   text-align: right;
@@ -41,14 +43,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 .formacao-texto {
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
     line-height: 1.33; 
-    max-width:47ch;
-    margin-bottom: 60px; 
+    max-width: 47ch;
+    margin-bottom: 40px; 
     color: #ffff;
 }
 
@@ -59,7 +61,7 @@
     display: flex;
     flex-wrap: wrap; 
     gap: 20px;    
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     box-shadow: 8px 8px 0px #ffffff;
     border-radius: 5px;
 }
@@ -67,7 +69,7 @@
 .estudo {
     flex: 1;
     background: #E82B2B;
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;        
     display: flex;
     flex-direction: column;

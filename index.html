@@ -6,6 +6,7 @@
     <title>Portfólio Caike Miguel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/formulario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -162,22 +163,56 @@
 
         <!-- CONTATO -->
         <footer class="footer" id="contato">
-        <div class="footer-container">
-            <p class="footer-texto">Se interessou pelo que viu? Bora trabalhar juntos e construir um projeto bacana juntando nossos conhecimentos! :)
-            </p>
-            <ul class="footer-contato">
-            <li>miguelmuramoto@gmail.com</li>
-            <li>+55 15 991779671</li>
-            <li>@<a href="www.instagram/mura.icake">mura.icake</a></li>
-            </ul>
-            <div class="footer-copy-redes">  
-            <p class="footer-copy">Caike Muramoto todos os direitos reservados.</p>
-            <ul class="footer-redes">
-            <li><a href="https://github.com/withlovemura">
-            <img src="./img/github.png" alt="GitHub">
-            </a></li>
-            <li><a href="https://instagram.com/mura.icake">
-            <img src="./img/instagram.png" alt="Instagram">
+            <div class="footer-container">
+                <!-- LADO ESQUERDO: INFORMAÇÕES -->
+                <div class="footer-info">
+                    <p class="footer-texto">Se interessou pelo que viu? Bora trabalhar juntos e construir um projeto bacana juntando nossos conhecimentos! :)
+                    </p>
+
+                    <ul class="footer-contato">
+                    <li>miguelmuramoto@gmail.com</li>
+                    <li>+55 15 991779671</li>
+                    <li>@<a href="www.instagram/mura.icake">mura.icake</a></li>
+                    </ul>
+
+                    <!-- DIREITOS E REDES SOCIAIS -->
+                    <div class="footer-copy-redes">  
+                        <p class="footer-copy">Caike Muramoto todos os direitos reservados.</p>
+                        <ul class="footer-redes">
+                        <li><a href="https://github.com/withlovemura">
+                        <img src="./img/github.png" alt="GitHub">
+                        </a></li>
+                        <li><a href="https://instagram.com/mura.icake">
+                        <img src="./img/instagram.png" alt="Instagram">
+                        </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- LADO DIREITO: FORMULÁRIO -->
+                <div class="footer-form-wrapper">
+                    <div class="formulario-contato">
+                        <form id="formContato" method="POST" action="processar_contato.php" class="row g-3 w-100">
+                            <div class="col-12">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nome" name="nome" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="mensagem" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+                            </div>
+                        </form>
+                        <div id="mensagemConfirmacao" class="alert alert-success mt-3" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>>
             </a></li>
             </ul>
             </div>      
@@ -188,5 +223,56 @@
         
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    
+    <script>
+        document.getElementById('formContato').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            // Validação dos campos
+            if (!nome || !email || !mensagem) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            // Validação de email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Por favor, insira um e-mail válido!');
+                return;
+            }
+
+            // Enviar dados para o servidor via fetch
+            const formData = new FormData(this);
+            
+            fetch('processar_contato.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.sucesso) {
+                    // Exibir mensagem de confirmação personalizada
+                    document.getElementById('mensagemConfirmacao').textContent = `Obrigado pela mensagem, ${nome}! Entraremos em contato em breve.`;
+                    document.getElementById('mensagemConfirmacao').style.display = 'block';
+                    
+                    // Limpar formulário
+                    document.getElementById('formContato').reset();
+                    
+                    // Esconder mensagem após 5 segundos
+                    setTimeout(() => {
+                        document.getElementById('mensagemConfirmacao').style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Erro ao enviar a mensagem. Tente novamente!');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao enviar a mensagem!');
+            });
+        });
+    </script>
