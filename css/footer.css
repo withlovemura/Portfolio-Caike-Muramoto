@@ -45,6 +45,11 @@
   line-height: 1.33;
   color: #ffffff;
 }
+
+.footer-texto .destaque {
+  color: #E82B2B;
+  font-weight: bold;
+}
  
 .footer-contato li {
   font-weight: bold;
